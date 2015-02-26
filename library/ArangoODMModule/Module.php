@@ -2,6 +2,8 @@
 
 namespace ArangoODMModule;
 
+use Zend\Console\Adapter\AdapterInterface;
+
 class Module
 {
 	function getConfig() {
@@ -15,6 +17,12 @@ class Module
 					__NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
 				]
 			]
+		];
+	}
+
+	function getConsoleUsage(AdapterInterface $console){
+		return [
+			'arango-odm generate-documents <directory> <namespace>' => 'generate document classes'
 		];
 	}
 }

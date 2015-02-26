@@ -7,9 +7,10 @@ return [
 			'routes' => [
 				'arango-odm' => [
 					'options' => [
-						'route'	=> 'arango-odm :action [-v] [--down]',
+						'route'	=> 'arango-odm generate-documents <directory> <namespace>',
 						'defaults' => [
-							'controller' => __NAMESPACE__ . '\Controller\CliController'
+							'controller' => __NAMESPACE__ . '\Controller\Cli',
+							'action' => 'generate-documents'
 						]
 					]
 				]
@@ -20,5 +21,10 @@ return [
 		'invokables' => [
 			__NAMESPACE__ . '\Controller\Cli' => __NAMESPACE__ . '\Controller\CliController',
 		],
+	],
+	'service_manager' => [
+		'factories' => [
+			'arango-document-handler' => __NAMESPACE__ . '\Service\DocumentHandlerServiceFactory'
+		]
 	]
 ];
