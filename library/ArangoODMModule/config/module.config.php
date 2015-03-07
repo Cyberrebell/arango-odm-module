@@ -7,7 +7,7 @@ return [
 			'routes' => [
 				'arango-odm' => [
 					'options' => [
-						'route'	=> 'arango-odm generate-documents <directory> <namespace>',
+						'route'	=> 'arango-odm generate-documents <directory> [<namespace>]',
 						'defaults' => [
 							'controller' => __NAMESPACE__ . '\Controller\Cli',
 							'action' => 'generate-documents'

@@ -13,7 +13,8 @@ class CliController extends AbstractActionController
 		$namespace = $this->params()->fromRoute('namespace', false);
 		
 		$documentHandler = $this->getDocumentHandler();
-		$documentHandler->generateDocuments($directory, $namespace);
+		$documentHandler->setDefaultNamespace($namespace);
+		$documentHandler->generateAllObjects($directory);
 	}
 	
 	/**
