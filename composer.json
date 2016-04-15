@@ -4,7 +4,6 @@
     "authors": [
         {
             "name": "Cyberrebell",
-            "email": "chainsaw75@web.de"
         }
     ],
     "type": "library",
@@ -19,15 +18,16 @@
         "zf2",
         "module"
     ],
-    "license": "GPL-3.0",
+    "license": "LGPL-3.0",
     "require": {
-        "php": ">=5.4.36",
-    	"zendframework/zendframework": "*",
-    	"cyberrebell/arango-odm": "dev-master"
+        "php": ">=5.6.0",
+        "zendframework/zend-servicemanager": "*",
+        "zendframework/zend-mvc": "*",
+        "cyberrebell/arango-odm": "dev-master"
     },
     "autoload": {
-        "psr-0": {
-            "ArangoODMModule\\": "library/"
+        "psr-4": {
+            "ArangoOdmModule\\": "src/"
         }
     }
 }
