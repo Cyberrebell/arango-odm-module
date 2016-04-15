@@ -3,7 +3,7 @@
     "description": "zf2 modul to use arango odm features",
     "authors": [
         {
-            "name": "Cyberrebell",
+            "name": "Cyberrebell"
         }
     ],
     "type": "library",
