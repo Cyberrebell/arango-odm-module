@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ArangoOdmModule\\": "module/ArangoOdmModule/src"
+            "ArangoOdmModule\\": "ArangoOdmModule/src"
         }
     }
 }
