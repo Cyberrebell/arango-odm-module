@@ -7,14 +7,14 @@ use Zend\Console\Adapter\AdapterInterface;
 class Module
 {
     function getConfig() {
-        return require __DIR__ . '/config/module.config.php';
+        return require __DIR__ . '/../../config/module.config.php';
     }
 
     function getAutoloaderConfig() {
         return [
             'Zend\Loader\StandardAutoloader' => [
                 'namespaces' => [
-                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+                    __NAMESPACE__ => __DIR__ . '/../../src/' . __NAMESPACE__,
                 ]
             ]
         ];
@@ -22,7 +22,7 @@ class Module
 
     function getConsoleUsage(AdapterInterface $console){
         return [
-            'arango-odm generate-documents <directory> <namespace>' => 'generate document classes'
+            'arango-odm generate-documents' => 'generate document classes'
         ];
     }
 }

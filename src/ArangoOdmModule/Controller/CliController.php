@@ -9,12 +9,14 @@ class CliController extends AbstractActionController
     protected $documentManager;
     
     function generateDocumentsAction() {
-        $directory = $this->params()->fromRoute('directory', false);
-        $namespace = $this->params()->fromRoute('namespace', false);
-        
-        $documentManager = $this->getDocumentHandler();
-        $documentManager->setDefaultNamespace($namespace);
-        $documentManager->generateAllObjects($directory);
+        $config = $this->getServiceLocator()->get('Config');
+        if (array_key_exists('arango-odm', $config) && array_key_exists('namespace-map', $config['arango-odm'])) {
+            $documentManager = $this->getDocumentManager();
+            $documentManager->generateAllDocuments($config['arango-odm']['namespace-map']);
+            echo 'Successfull generated documents!' . PHP_EOL;
+        } else {
+            throw new \Exception('Missing arango-odm["namespace-map"] configuration!');
+        }
     }
     
     /**

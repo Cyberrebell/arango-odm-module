@@ -10,7 +10,7 @@ class DocumentManagerServiceFactory implements FactoryInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator) {
         $config = $serviceLocator->get('Config');
-        $documentManager = new DocumentHandler($config['arango-odm']);
+        $documentManager = new DocumentManager($config['arango-odm']);
         return $documentManager;
     }
 }
